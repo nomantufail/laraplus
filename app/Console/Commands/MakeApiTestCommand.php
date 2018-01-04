@@ -44,7 +44,12 @@ class MakeApiTestCommand extends Command
     }
 
     public function getRoute(){
-        return $this->argument('route');
+        $route = $this->argument('route');
+        if($route == null)
+        {
+            $route = $this->ask("please enter the route");
+        }
+        return $route;
     }
 
     public function getArgs(){
@@ -56,7 +61,12 @@ class MakeApiTestCommand extends Command
     }
 
     public function getFunction(){
-        return $this->argument('functionName');
+        $functionName = $this->argument('functionName');
+        if($functionName == null) 
+        {
+            $functionName = $this->ask("please enter function name");
+        }
+        return $functionName;
     }
 
     public function getTargetedTestClassStub(){
