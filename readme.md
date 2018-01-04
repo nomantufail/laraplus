@@ -6,8 +6,9 @@ clone this repository and run 'composer install' in project root directory.
 ## Available Commands
 ### Make Request Command
 
+```
 php artisan make:request RegisterUserRequest w.g.user/register UsersController@register@auth.register "This method will register a user" --rules="username=>required password=>required" --auth=n|y
-
+```
 w: web
 g: get
 user/register: route
@@ -16,15 +17,15 @@ UsersController@register@auth.register: controller@function@view
 --auth: user should be authenticated or not?
 
 ### Make repository command
-php artisan make:repository UsersRepository
+```php artisan make:repository UsersRepository```
 it will create repository , factory and interface
 
 ### Make model command
-php artisan make:model
+```php artisan make:model```
 it will create laravel eloquent model and app model as well.
 
 ### Make app model command
-php artisan make:app-model
+```php artisan make:app-model```
 it will create app model
 
 ### Make model mapper command
