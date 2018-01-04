@@ -16,7 +16,10 @@ UsersController@register@auth.register: controller@function@view
 --auth: user should be authenticated or not?
 
 ### Make repository command
+```
 php artisan make:repository UsersRepository
+```
+
 it will create repository , factory and interface
 
 ### Make model command
