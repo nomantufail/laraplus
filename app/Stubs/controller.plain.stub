@@ -1,0 +1,14 @@
+<?php
+
+namespace DummyNamespace;
+
+
+class DummyClass extends ParentController
+{
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+//DummyNewRequestMethod
+}

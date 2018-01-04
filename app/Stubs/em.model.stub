@@ -1,0 +1,28 @@
+<?php
+namespace Models;
+
+
+use App\Exceptions\ValidationErrorException;
+use Models\Model;
+use Models\ModelInterface;
+
+class DummyModel extends Model implements ModelInterface
+{
+    DummyProps
+
+    public function __construct(DummyConstructArgs){
+        DummyConstructSetters
+    }
+
+    /**
+     * @return array
+     * @Description: always use camelcase keys for this array. and should be same as object properties.
+     */
+    public function toArray(){
+        return [
+            DummyToArray
+        ];
+    }
+
+    //DummyGetterSetters
+}

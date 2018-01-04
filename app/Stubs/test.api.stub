@@ -1,0 +1,14 @@
+
+    /**
+     * DummyDescription
+     *
+     * @return void
+     */
+    public function test_DummyFunction()
+    {
+        $response = $this->DummyMethod('DummyRoute', [DummyArgs]);
+        $response->assertStatus(200);
+    }
+
+    //DummyTest
+    

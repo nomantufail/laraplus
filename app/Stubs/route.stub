@@ -1,0 +1,2 @@
+Route::DummyType('DummyRoute','DummyControllerMethod')->middleware('requestHandler:DummyRequestName');
+//DummyNewRoute

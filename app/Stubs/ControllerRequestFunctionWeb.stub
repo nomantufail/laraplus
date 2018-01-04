@@ -1,0 +1,18 @@
+
+    /**
+     * @param DummyRequest $request
+     * @return mixed
+     * Description: DummyDescription
+     */
+    public function DummyMethodName(DummyRequest $request)
+    {
+        try
+        {
+            return $this->response->setView('DummyView')->respond([
+                'data'=>[]
+            ]);
+        }catch (\Exception $e){
+            return $this->response->respondInternalServerError($e->getMessage());
+        }
+    }
+//DummyNewRequestMethod

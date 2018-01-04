@@ -1,0 +1,12 @@
+    public function DummyMethodName(DummyRequest $request)
+    {
+        try
+        {
+            return $this->response->respond([
+                'data'=>[]
+            ]);
+        }catch (\Exception $e){
+            return $this->response->respondInternalServerError($e->getMessage());
+        }
+    }
+//DummyNewRequestMethod

@@ -1,0 +1,32 @@
+<?php
+namespace ModelMappers;
+
+
+use Models\DummyModel;
+
+class DummyMapper extends ModelMapper implements ModelMapperInterface
+{
+
+    /**
+     * @param $dbModel
+     * @return DummyModel
+     */
+    public function map($dbModel)
+    {
+        /**
+         * @var $model DummyModel
+         */
+        $model = $this->autoMap($dbModel, new DummyModel());
+        return $model;
+    }
+
+    /**
+     * @param DummyModel $model
+     * @param array $properties
+     * @return array
+     */
+    public function mapOnTable($model, $properties = [])
+    {
+       return $this->autoMapOnTable($model, $properties);
+    }
+}

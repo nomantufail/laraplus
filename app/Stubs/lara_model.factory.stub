@@ -1,0 +1,6 @@
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(DummyLaraModel, function (Faker\Generator $faker) {
+    return [
+        DummyFakerValues
+    ];
+});

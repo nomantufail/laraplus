@@ -1,0 +1,16 @@
+
+    /**
+     * @return DummyType
+     */
+    public function DummyGetter()
+    {
+        return $this->DummyProp;
+    }
+
+    /**
+     * @param DummyType
+     */
+    public function DummySetter(DummyArg)
+    {
+        $this->DummyProp = DummyArg;
+    }

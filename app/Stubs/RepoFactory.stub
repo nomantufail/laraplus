@@ -1,0 +1,17 @@
+<?php
+namespace RepoFactories;
+
+
+use RepoInterfaces\RepoFactoryInterface;
+use Repositories\DummyRepository;
+
+class DummyFactory implements RepoFactoryInterface
+{
+    /**
+     * @return DummyRepository
+     */
+    public function getRepo()
+    {
+        return new DummyRepository();
+    }
+}
