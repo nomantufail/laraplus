@@ -29,33 +29,33 @@ it will create laravel eloquent model and app model as well.
 it will create app model
 
 ### Make model mapper command
-php artisan make:modelmapper UserMapper
+```php artisan make:modelmapper UserMapper```
 it will create model mapper.
 
 ### Make migration command
-php artisan make:migration
+```php artisan make:migration```
 it will create migration, laravel model, app model and seeder.
 
 ### Add properties in app model command
-php artisan addProps:app-model
+```php artisan addProps:app-model```
 it will create new properties in app model
 
 ### Add properties in model command
-php artisan addProps:model
+```php artisan addProps:model```
 it will add properties in laravel model & app-model as well.
 
 ### Add Columns in migration command
-php artisan addColumns:migration
+```php artisan addColumns:migration```
 it will create new columns in migration, laravel model and app-model.
 
 ### Make view command
-php artisan make:view auth.register --parent=parent.view.name
+```php artisan make:view auth.register --parent=parent.view.name```
 it will create a new view in auth folder with given parent. it will be a blade file.
 
 ### Make api test command
-php artisan make:api_test
+```php artisan make:api_test```
 it will create a test method in an api test class.
 
 ### Make seeder command
-php artisan make:seeder
+```php artisan make:seeder```
 it will create a seeder with factory.
