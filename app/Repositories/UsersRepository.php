@@ -24,9 +24,14 @@ class UsersRepository extends Repository implements UsersRepoInterface
 {
 
     private $userLoginsRepo = null;
+    /**
+    * @var UserMapper 
+    */
+    private $userMapper = null;
     public function __construct()
     {
         $this->userLoginsRepo = (new UserLoginsRepoFactory())->getRepo();
+        $this->userMapper = (new UserMapper());
     }
 
     /**
@@ -83,6 +88,7 @@ class UsersRepository extends Repository implements UsersRepoInterface
     }
 
     public function create(User $user){
-        return (new UserMapper())->map(\LaraModels\User::create((new UserMapper())->mapOnTable($user)));
+        $newellyCreatedUser = \LaraModels\User::create($this->userMapper->mapOnTable($user));
+        return $this->userMapper->map($newellyCreatedUser);
     }
 }

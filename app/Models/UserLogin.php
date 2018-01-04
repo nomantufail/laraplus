@@ -3,6 +3,8 @@ namespace Models;
 
 
 use App\Exceptions\ValidationErrorException;
+use Models\Model;
+use Models\ModelInterface;
 
 class UserLogin extends Model implements ModelInterface
 {
@@ -11,15 +13,19 @@ class UserLogin extends Model implements ModelInterface
  	private $userId = 0;
  	private $sessionToken = null;
  	private $active = 0;
- 	private $deviceid = null;//DummyProps
+ 	private $deviceid = null;
+ 	private $createdAt = null;
+ 	private $updatedAt = null;//DummyProps
 
-    public function __construct($id = null, $userId = 0, $sessionToken = null, $active = 0, $deviceid = null/*DummyConstructArgs*/){
+    public function __construct($id = null, $userId = 0, $sessionToken = null, $active = 0, $deviceid = null, $createdAt = null, $updatedAt = null/*DummyConstructArgs*/){
         
  	 	$this->setId($id);
  	 	$this->setUserId($userId);
  	 	$this->setSessionToken($sessionToken);
  	 	$this->setActive($active);
- 	 	$this->setDeviceid($deviceid);//DummyConstructSetters
+ 	 	$this->setDeviceid($deviceid);
+ 	 	$this->setCreatedAt($createdAt);
+ 	 	$this->setUpdatedAt($updatedAt);//DummyConstructSetters
     }
 
     /**
@@ -33,11 +39,13 @@ class UserLogin extends Model implements ModelInterface
  	 	 	'userId' => $this->getUserId(), 
  	 	 	'sessionToken' => $this->getSessionToken(), 
  	 	 	'active' => $this->getActive(), 
- 	 	 	'deviceid' => $this->getDeviceid()//DummyToArray
+ 	 	 	'deviceid' => $this->getDeviceid(), 
+ 	 	 	'createdAt' => $this->getCreatedAt(), 
+ 	 	 	'updatedAt' => $this->getUpdatedAt()//DummyToArray
         ];
     }
 
-    
+    //
     /**
      * @return $id
      */
@@ -56,7 +64,7 @@ class UserLogin extends Model implements ModelInterface
 
 
     /**
-     * @return $user_id
+     * @return $userId
      */
     public function getUserId()
     {
@@ -64,7 +72,7 @@ class UserLogin extends Model implements ModelInterface
     }
 
     /**
-     * @param $user_id
+     * @param $userId
      */
     public function setUserId($userId)
     {
@@ -73,7 +81,7 @@ class UserLogin extends Model implements ModelInterface
 
 
     /**
-     * @return $session_token
+     * @return $sessionToken
      */
     public function getSessionToken()
     {
@@ -81,7 +89,7 @@ class UserLogin extends Model implements ModelInterface
     }
 
     /**
-     * @param $session_token
+     * @param $sessionToken
      */
     public function setSessionToken($sessionToken)
     {
@@ -120,6 +128,40 @@ class UserLogin extends Model implements ModelInterface
     public function setDeviceid($deviceid)
     {
         $this->deviceid = $deviceid;
+    }
+
+
+    /**
+     * @return $createdAt
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * @param $createdAt
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->createdAt = $createdAt;
+    }
+
+
+    /**
+     * @return $updatedAt
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
+    }
+
+    /**
+     * @param $updatedAt
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
     }
 
 

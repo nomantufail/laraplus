@@ -23,7 +23,7 @@ class AddModelPropertiesCommand extends Command
      *
      * @var string
      */
-    protected $description = 'Add properties in laravel model && associated emrevo model';
+    protected $description = 'Add properties in laravel model && associated app-model';
 
     /**
      * Create a new command instance.
@@ -68,12 +68,12 @@ class AddModelPropertiesCommand extends Command
         $this->files->put($this->getStub(), $stub);
         echo "Properties created in laravel model. \n !!!NOTE:- Make sure you add these properties in the seeder. Thank You! \n";
 
-        $this->addEmModelProperty();
+        $this->addAppModelProperty();
     }
 
 
-    public function addEmModelProperty(){
-        $this->call('addProps:emmodel', [
+    public function addAppModelProperty(){
+        $this->call('addProps:app-model', [
             'model' => $this->getModelName(),
             'props' => join(' ',$this->getProps())
         ]);

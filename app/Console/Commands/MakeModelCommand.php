@@ -148,7 +148,7 @@ class MakeModelCommand extends Command
         }
         echo "Laravel model created \n";
 
-        $this->createEmrevoModel();
+        $this->createAppModel();
 
         $this->createModelMapper();
 
@@ -191,8 +191,8 @@ class MakeModelCommand extends Command
         ]);
     }
 
-    public function createEmrevoModel(){
-        $this->call('make:emmodel', [
+    public function createAppModel(){
+        $this->call('make:app-model', [
             'name' => $this->getModelName(),
             'props' => join(' ',$this->getProps())
         ]);

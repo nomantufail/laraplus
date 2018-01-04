@@ -3,10 +3,10 @@
 namespace App\Console;
 
 use App\Console\Commands\AddColumnInMigrationCommand;
-use App\Console\Commands\AddEmModelPropertyCommand;
+use App\Console\Commands\AddAppModelPropertyCommand;
 use App\Console\Commands\AddModelPropertiesCommand;
 use App\Console\Commands\MakeControllerCommand;
-use App\Console\Commands\MakeEmModelCommand;
+use App\Console\Commands\MakeAppModelCommand;
 use App\Console\Commands\MakeMigrationCommand;
 use App\Console\Commands\MakeModelCommand;
 use App\Console\Commands\MakeModelMapperCommand;
@@ -30,10 +30,10 @@ class Kernel extends ConsoleKernel
         MakeRequestCommand::class,
         MakeControllerCommand::class,
         MakeModelCommand::class,
-        MakeEmModelCommand::class,
+        MakeAppModelCommand::class,
         MakeModelMapperCommand::class,
         MakeMigrationCommand::class,
-        AddEmModelPropertyCommand::class,
+        AddAppModelPropertyCommand::class,
         AddModelPropertiesCommand::class,
         AddColumnInMigrationCommand::class,
         MakeViewCommand::class,

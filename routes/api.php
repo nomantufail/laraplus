@@ -13,9 +13,7 @@ use Illuminate\Http\Request;
 |
 */
 Route::get('/',function(){
-    return 'welcome to emrevo api';
+    return 'welcome to api';
 });
 
-Route::get('fee_structure/get','FeeStructureController@get')->middleware('requestHandler:GetFeeStructureRequest');
-Route::get('classes_details','EdClassController@classesDetails')->middleware('requestHandler:ClassesDetailsRequest');
 //DummyNewRoute

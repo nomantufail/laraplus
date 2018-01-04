@@ -11,7 +11,6 @@ namespace Repositories;
 
 use Illuminate\Support\Facades\DB;
 use LaraModels\UserLogin as DbUserLogin;
-use Libs\ModelMapper;
 use ModelMappers\UserLoginMapper;
 use Models\UserLogin;
 use RepoInterfaces\UserLoginsRepoInterface;
@@ -19,9 +18,14 @@ use RepoInterfaces\UserLoginsRepoInterface;
 class UserLoginsRepository extends Repository implements UserLoginsRepoInterface
 {
     public $dbUserLogin = null;
+    /**
+    * @var UserLoginMapper
+    */
+    public $userLoginMapper = null;
     public function __construct()
     {
         $this->dbUserLogin = new DbUserLogin();
+        $this->userLoginMapper = new UserLoginMapper();
     }
 
 
@@ -37,7 +41,7 @@ class UserLoginsRepository extends Repository implements UserLoginsRepoInterface
         $logins = [];
         $db_logins = DbUserLogin::where('user_id',$userId)->get()->all();
         foreach ($db_logins as $login){
-            $logins[] = ModelMapper::mapUserLogin($db_logins);
+            $logins[] = $this->userLoginMapper->map($db_logins);
         }
         return $logins;
     }
@@ -51,7 +55,7 @@ class UserLoginsRepository extends Repository implements UserLoginsRepoInterface
         $logins = [];
         $db_logins = DbUserLogin::where('user_id',$userId)->where('active',0)->get()->all();
         foreach ($db_logins as $login){
-            $logins[] = ModelMapper::mapUserLogin($db_logins);
+            $logins[] = $this->userLoginMapper->map($login);
         }
         return $logins;
     }
@@ -64,7 +68,7 @@ class UserLoginsRepository extends Repository implements UserLoginsRepoInterface
         $logins = [];
         $db_logins = DbUserLogin::where('user_id',$userId)->where('active',1)->get()->all();
         foreach ($db_logins as $login){
-            $logins[] = ModelMapper::mapUserLogin($db_logins);
+            $logins[] = $this->userLoginMapper->map($db_logins);
         }
         return $logins;
     }

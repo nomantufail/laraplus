@@ -11,12 +11,12 @@ class UserMapper extends ModelMapper implements ModelMapperInterface
      * @param $dbModel
      * @return User
      */
-    public  function map($dbModel)
+    public function map($dbModel)
     {
         /**
          * @var $model User
          */
-        $model = parent::autoMap($dbModel, new User());
+        $model = $this->autoMap($dbModel, new User());
         return $model;
     }
 
@@ -25,8 +25,8 @@ class UserMapper extends ModelMapper implements ModelMapperInterface
      * @param array $properties
      * @return array
      */
-    public  function mapOnTable($model, $properties = [])
+    public function mapOnTable($model, $properties = [])
     {
-       return parent::autoMapOnTable($model, $properties);
+       return $this->autoMapOnTable($model, $properties);
     }
 }

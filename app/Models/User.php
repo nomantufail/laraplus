@@ -3,23 +3,25 @@ namespace Models;
 
 
 use App\Exceptions\ValidationErrorException;
+use Models\Model;
+use Models\ModelInterface;
 
 class User extends Model implements ModelInterface
 {
     
- 	private $id = 0;
+ 	private $id = null;
  	private $username = null;
  	private $password = null;
- 	private $agentId = 0;
- 	private $foo = '';//DummyProps
+ 	private $createdAt = null;
+ 	private $updatedAt = null;//DummyProps
 
-    public function __construct($id = 0, $username = null, $password = null, $agentId = 0, $foo = '' /*DummyConstructArgs*/){
+    public function __construct($id = null, $username = null, $password = null, $createdAt = null, $updatedAt = null/*DummyConstructArgs*/){
         
  	 	$this->setId($id);
  	 	$this->setUsername($username);
  	 	$this->setPassword($password);
- 	 	$this->setAgentId($agentId);
- 	 	$this->setFoo($foo);//DummyConstructSetters
+ 	 	$this->setCreatedAt($createdAt);
+ 	 	$this->setUpdatedAt($updatedAt);//DummyConstructSetters
     }
 
     /**
@@ -32,12 +34,12 @@ class User extends Model implements ModelInterface
  	 	 	'id' => $this->getId(), 
  	 	 	'username' => $this->getUsername(), 
  	 	 	'password' => $this->getPassword(), 
- 	 	 	'agentId' => $this->getAgentId(), 
- 	 	 	'foo' => $this->getFoo()//DummyToArray
+ 	 	 	'createdAt' => $this->getCreatedAt(), 
+ 	 	 	'updatedAt' => $this->getUpdatedAt()//DummyToArray
         ];
     }
 
-    
+    //
     /**
      * @return $id
      */
@@ -90,37 +92,36 @@ class User extends Model implements ModelInterface
 
 
     /**
-     * @return $agent_id
+     * @return $createdAt
      */
-    public function getAgentId()
+    public function getCreatedAt()
     {
-        return $this->agentId;
+        return $this->createdAt;
     }
 
     /**
-     * @param $agent_id
+     * @param $createdAt
      */
-    public function setAgentId($agentId)
+    public function setCreatedAt($createdAt)
     {
-        $this->agentId = $agentId;
+        $this->createdAt = $createdAt;
     }
 
 
-
     /**
-     * @return $foo
+     * @return $updatedAt
      */
-    public function getFoo()
+    public function getUpdatedAt()
     {
-        return $this->foo;
+        return $this->updatedAt;
     }
 
     /**
-     * @param $foo
+     * @param $updatedAt
      */
-    public function setFoo($foo)
+    public function setUpdatedAt($updatedAt)
     {
-        $this->foo = $foo;
+        $this->updatedAt = $updatedAt;
     }
 
 

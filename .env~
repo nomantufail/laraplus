@@ -7,9 +7,9 @@ APP_URL=http://localhost/coding-pixel/giftapp/
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=giftapp
+DB_DATABASE=laraplus
 DB_USERNAME=root
-DB_PASSWORD=
+DB_PASSWORD=root
 
 BROADCAST_DRIVER=log
 CACHE_DRIVER=file

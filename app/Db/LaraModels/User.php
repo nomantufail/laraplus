@@ -13,18 +13,12 @@ class User extends Model
      * @var array
      */
     protected $fillable = [
-        'username', 'password', 'agent_id', 'foo'/*DummyFillables*/
+        'username', 'password', 'created_at', 'updated_at'/*DummyFillables*/
     ];
 
-    public function logins(){
-        return $this->hasMany(UserLogin::class, 'user_id');
-    }
+    
  
- 	public function foo(){
-            return $this->hasMany(Foo::class, 'user_id');
-        }
- 
- 	public function foos(){
-            return $this->hasMany(Foo::class, 'user_id');
+ 	public function logins(){
+            return $this->hasMany(UserLogin::class, 'user_id');
         }//DummyRelationship
 }

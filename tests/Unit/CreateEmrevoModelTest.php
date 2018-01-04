@@ -6,7 +6,7 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
-use App\Console\Commands\MakeEmModelCommand;
+use App\Console\Commands\MakeAppModelCommand;
 use Models\FeeStructure\Section;
 
 class FetchClassNameFromPathTest extends TestCase
@@ -19,16 +19,16 @@ class FetchClassNameFromPathTest extends TestCase
     public function test_getClassName()
     {
         $classPath = 'Foo';
-        $generatedClassName = MakeEmModelCommand::getClassName($classPath);
+        $generatedClassName = MakeAppModelCommand::getClassName($classPath);
         $this->assertEquals($generatedClassName, "Foo");
     }
 
 
     public function test_getModelNamespace(){
-        $generatedResponse = MakeEmModelCommand::getModelNameSpace('FeeStructure/Foo/Bar/Classe'); 
+        $generatedResponse = MakeAppModelCommand::getModelNameSpace('FeeStructure/Foo/Bar/Classe'); 
         $this->assertEquals($generatedResponse, 'namespace Models\FeeStructure\Foo\Bar'); 
 
-        $generatedResponse = MakeEmModelCommand::getModelNameSpace('Classe'); 
+        $generatedResponse = MakeAppModelCommand::getModelNameSpace('Classe'); 
         $this->assertEquals($generatedResponse, 'namespace Models');
     }
 }
